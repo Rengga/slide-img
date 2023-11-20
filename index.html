@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="ini.css" />
+    <link rel="stylesheet" href="rengga.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="flex algn-center jstfy-center h100vh full-w slide-parent">
+      <div class="full-slide shdw">
+        <div class="close">X</div>
+        <img src="" alt="" />
+      </div>
+      <div class="kotak shdw owl-carousel">
+        <img src="bahan/i1.jpg" alt="" />
+        <img src="bahan/i2.jpg" alt="" />
+        <img src="bahan/i3.jpg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    items: 1,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: false,
+  });
+
+  $(document).on("click", ".kotak img", function () {
+    let img = $(this).attr("src");
+    console.log(img);
+    $(".full-slide img").prop("src", img);
+    $(".full-slide").fadeIn("slow");
+  });
+
+  $(document).on("click", ".full-slide .close", function () {
+    $(".full-slide").fadeOut("slow");
+  });
+</script>
